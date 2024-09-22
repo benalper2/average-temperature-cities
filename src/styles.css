@@ -1,0 +1,134 @@
+/* {
+  margin: 0;
+  padding: 0;
+} */
+
+body {
+  overflow-y: scroll;
+  overflow-x: hidden;
+  background-color: rgb(54, 143, 173);
+}
+/*
+#name {
+  position: absolute;
+  background-color: white;
+  width: fit-content;
+  opacity: 0;
+  border-radius: 5px;
+  border: 3px solid pink;
+  padding: 0px 5px;
+  font-size: 1.5rem;
+}
+
+#timeCont {
+  background-color: white;
+  width: fit-content;
+  font-size: 1.5rem;
+  padding: 5px 5px;
+  border-radius: 5px;
+  border: 3px solid rgb(245, 128, 128);
+}
+
+svg path {
+  cursor: pointer;
+} */
+
+h1 {
+  text-align: center;
+  color: darkblue;
+  /* padding-top: 20px; */
+}
+
+.two-column-map-and-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 100%;
+}
+
+.two-columns-countrylist {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 400px;
+  padding-bottom: 5px;
+}
+
+.four-columns-min-max-filter {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+  width: 70%;
+  padding-bottom: 5px;
+  text-align: center;
+}
+
+input {
+  width: 100px;
+  border: 5px;
+  border-color: white;
+  background-color: lightblue;
+  border-radius: 5px;
+}
+
+.country-scroll {
+  height: 800px;
+  width: 350px;
+  overflow-y: hidden;
+  overflow-x: hidden;
+}
+
+.List-Title {
+  font-size: 2em;
+  font-weight: bold;
+  /* text-align: center; */
+}
+
+.countryName {
+  font-size: 1.3em;
+  font-weight: bold;
+}
+
+.InputCoastRatio {
+  font-size: 1.3em;
+  font-weight: bold;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 40px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: lightblue;
+  border-radius: 20px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: blue;
+  border-radius: 20px;
+  height: 200px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: darkblue;
+}
+/* svg path:hover {
+    fill: pink;
+  } */
+
+.circle {
+  width: 6px; /*6*/
+  height: 6px;
+  border-radius: 50%;
+  /* box-shadow: 0px 0px 1px 1px #2615c21a; */
+  background-color: rgba(26, 10, 248, 0.5);
+  position: absolute;
+  /* left: 500px; */
+  /* top: 500px; */
+  transform: translate(-50%, -50%);
+}
+
+.circle:hover {
+  background-color: rgb(255, 0, 0);
+}
