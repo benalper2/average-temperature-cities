@@ -2,7 +2,15 @@ import { useEffect, useState } from "react";
 import world from "./assets/Equirectangular_projection_SWtrim1.jpg";
 import City from "./City.jsx";
 
-export default function WorldMap({ setCityID, setCityRow, minTemp, maxTemp }) {
+export default function WorldMap({
+  setCityID,
+  setCityRow,
+  minTemp,
+  maxTemp,
+  monthToggles,
+  tickbox,
+  tickIndex,
+}) {
   //const [text, setText] = useState();
   const [CityTemps2, setCityTemps2] = useState([]);
 
@@ -16,11 +24,24 @@ export default function WorldMap({ setCityID, setCityRow, minTemp, maxTemp }) {
       .then((response) => response.text())
       .then((responseText) => {
         //setText(responseText);
-        console.log("setext");
+        console.log(
+          "minTemp: " +
+            minTemp +
+            "maxTemp: " +
+            maxTemp +
+            " monthToggles: " +
+            monthToggles +
+            " typeof monthToggles[0]: " +
+            typeof monthToggles[0] +
+            " tickbox: " +
+            tickbox +
+            " tickIndex: " +
+            tickIndex
+        );
 
         if (responseText !== undefined) {
           textLines = responseText.split(/\r\n|\n|\r/);
-          console.log("text.split");
+          //console.log("text.split");
         }
         if (textLines !== undefined) {
           for (var i = 0; i < textLines.length; i++) {
@@ -32,8 +53,13 @@ export default function WorldMap({ setCityID, setCityRow, minTemp, maxTemp }) {
           //Filter min and max
           FilteredTemps = CityTemps.filter((row) => {
             KeepRow = true;
+
             for (var i = 6; i < 18; i++) {
-              if (row[i] >= maxTemp || row[i] <= minTemp) {
+              //was 6 and 18
+              if (
+                (row[i] >= maxTemp || row[i] <= minTemp) &&
+                monthToggles[i - 6]
+              ) {
                 KeepRow = false;
               }
             }
@@ -41,10 +67,10 @@ export default function WorldMap({ setCityID, setCityRow, minTemp, maxTemp }) {
           });
 
           setCityTemps2(FilteredTemps);
-          console.log("max: " + maxTemp + "min: " + minTemp);
+          // console.log("max: " + maxTemp + "min: " + minTemp);
         }
       });
-  }, [minTemp, maxTemp]);
+  }, [minTemp, maxTemp, tickbox, tickIndex]);
 
   return (
     <>

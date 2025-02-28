@@ -11,7 +11,7 @@ export default function City({
   //props.id
 
   var x = Math.round((-1 * (long * 1200)) / 363 + 595);
-  var y = Math.round((-1 * (lat * 604)) / 183 + 451);
+  var y = Math.round((-1 * (lat * 604)) / 183 + 465);
   //console.log("long: " + long + "  lat: " + lat);
 
   var leftx = x + "px";
@@ -27,7 +27,7 @@ export default function City({
   // console.log("leftx: " + leftx + "  topy: " + topy);
   return (
     <>
-      <div className="circle" style={stylep} onMouseOver={handleHover} />
+      <div className="circle" style={stylep} onClick={handleHover} />
     </>
   );
 }

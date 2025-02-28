@@ -12,6 +12,23 @@ export default function App() {
   const [cityRow, setCityRow] = useState([]);
   const [minTemp, setMinTemp] = useState(-99);
   const [maxTemp, setMaxTemp] = useState(99);
+  const [tickbox, setTickbox] = useState();
+  const [tickIndex, setTickIndex] = useState();
+
+  const [monthToggles, setMonthToggles] = useState([
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+  ]);
 
   const handleKeyDownMin = (event) => {
     if (event.key === "Enter") {
@@ -67,16 +84,18 @@ export default function App() {
 
       <div className="four-columns-min-max-filter">
         <div>All months average temperature in Celcius</div>
-        <div>Min</div>
+        <div style={{ fontSize: 25, fontWeight: "bold" }}>Min</div>
         <input
+          style={{ fontSize: 25, fontWeight: "bold" }}
           id="searchbar"
           className="search"
           type="text"
           placeholder="Min.."
           onKeyDown={handleKeyDownMin}
         />
-        <div>Max</div>
+        <div style={{ fontSize: 25, fontWeight: "bold" }}>Max</div>
         <input
+          style={{ fontSize: 25, fontWeight: "bold" }}
           id="searchbar"
           className="search"
           type="text"
@@ -93,10 +112,20 @@ export default function App() {
             setCityRow={setCityRow}
             minTemp={minTemp}
             maxTemp={maxTemp}
+            monthToggles={monthToggles}
+            tickbox={tickbox}
+            tickIndex={tickIndex}
           />
         </div>
         <div>
-          <MonthList CityID={CityID} cityRow={cityRow} />
+          <MonthList
+            CityID={CityID}
+            cityRow={cityRow}
+            setMonthToggles={setMonthToggles}
+            monthToggles={monthToggles}
+            setTickbox={setTickbox}
+            setTickIndex={setTickIndex}
+          />
         </div>
       </div>
     </>
