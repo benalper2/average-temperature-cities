@@ -14,8 +14,9 @@ export default function City({
 
   var x = Math.round((-1 * (long * 1200)) / 363 + 595);
   // var y = Math.round((-1 * (lat * 604)) / 183 + 465);
-  var y = Math.round((-1 * (lat * 604)) / 183 + 298 + WorldImgY);
-  console.log("ScreenHeight: " + ScreenHeight);
+  var y = Math.round(
+    (-1 * (lat * 604)) / 183 + 298 + WorldImgY + window.scrollY
+  );
   //y = y + Math.round(300 + WorldImgY);
 
   var leftx = x + "px";

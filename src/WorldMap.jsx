@@ -120,7 +120,7 @@ export default function WorldMap({
       <img src={world} className="world-img" />
       <div>
         Window Screen Width: {ScreenWidth} Height: {ScreenHeight} WorldImgY:{" "}
-        {WorldImgY}
+        {WorldImgY} ScrollTop: {window.scrollY}
       </div>
       <></>
     </>
