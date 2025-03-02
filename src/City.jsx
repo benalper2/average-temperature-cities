@@ -7,12 +7,16 @@ export default function City({
   setCityID,
   cityRow,
   setCityRow,
+  ScreenHeight,
+  WorldImgY,
 }) {
   //props.id
 
   var x = Math.round((-1 * (long * 1200)) / 363 + 595);
-  var y = Math.round((-1 * (lat * 604)) / 183 + 465);
-  //console.log("long: " + long + "  lat: " + lat);
+  // var y = Math.round((-1 * (lat * 604)) / 183 + 465);
+  var y = Math.round((-1 * (lat * 604)) / 183 + 298 + WorldImgY);
+  console.log("ScreenHeight: " + ScreenHeight);
+  //y = y + Math.round(300 + WorldImgY);
 
   var leftx = x + "px";
   var topy = y + "px";

@@ -13,6 +13,9 @@ export default function WorldMap({
 }) {
   //const [text, setText] = useState();
   const [CityTemps2, setCityTemps2] = useState([]);
+  const [ScreenWidth, setScreenWidth] = useState([]);
+  const [ScreenHeight, setScreenHeight] = useState([]);
+  const [WorldImgY, setWorldImgY] = useState([]);
 
   let textLines;
   var CityTemps = [];
@@ -67,10 +70,36 @@ export default function WorldMap({
           });
 
           setCityTemps2(FilteredTemps);
+          onResize();
           // console.log("max: " + maxTemp + "min: " + minTemp);
         }
       });
   }, [minTemp, maxTemp, tickbox, tickIndex]);
+
+  useEffect(() => {
+    window.addEventListener("resize", onResize);
+    return () => {
+      window.removeEventListener("resize", onResize);
+    };
+  }, []);
+
+  const onResize = () => {
+    //console.log("resized to: ", window.innerWidth, "x", window.innerHeight);
+    setScreenWidth(window.innerWidth);
+    setScreenHeight(window.innerHeight);
+    let elem = document.querySelector(".world-img");
+    let rect = elem.getBoundingClientRect();
+    setWorldImgY(rect.y);
+  };
+  // const showWorldY = () => {
+  //   let elem = document.getElementsByClassName("world")[0];
+  //   let rect = elem.getBoundingClientRect();
+  //   //const rectx = rect.left + window.scrollX;
+  //   const recty = rect.top;
+  //   //console.log("recty: " + recty);
+  //   setRectY(recty);
+  //   // setCityRow(cityRow);
+  // };
 
   return (
     <>
@@ -84,9 +113,16 @@ export default function WorldMap({
             setCityID={setCityID}
             cityRow={cityRow}
             setCityRow={setCityRow}
+            ScreenHeight={ScreenHeight}
+            WorldImgY={WorldImgY}
           />
         ))}
-      <img src={world} />
+      <img src={world} className="world-img" />
+      <div>
+        Window Screen Width: {ScreenWidth} Height: {ScreenHeight} WorldImgY:{" "}
+        {WorldImgY}
+      </div>
+      <></>
     </>
   );
 }
