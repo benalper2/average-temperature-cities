@@ -17,7 +17,6 @@ export default function City({
   var y = Math.round(
     (-1 * (lat * 604)) / 183 + 298 + WorldImgY + window.scrollY
   );
-  //y = y + Math.round(300 + WorldImgY);
 
   var leftx = x + "px";
   var topy = y + "px";

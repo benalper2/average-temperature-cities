@@ -78,8 +78,10 @@ export default function WorldMap({
 
   useEffect(() => {
     window.addEventListener("resize", onResize);
+    window.addEventListener("scroll", onResize);
     return () => {
       window.removeEventListener("resize", onResize);
+      window.removeEventListener("scroll", onResize);
     };
   }, []);
 
@@ -115,12 +117,13 @@ export default function WorldMap({
             setCityRow={setCityRow}
             ScreenHeight={ScreenHeight}
             WorldImgY={WorldImgY}
+            //    onResize={onResize}
           />
         ))}
       <img src={world} className="world-img" />
       <div>
         Window Screen Width: {ScreenWidth} Height: {ScreenHeight} WorldImgY:{" "}
-        {WorldImgY} ScrollTop: {window.scrollY}
+        {WorldImgY} ScrollY: {window.scrollY}
       </div>
       <></>
     </>
