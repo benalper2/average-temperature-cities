@@ -116,9 +116,24 @@ export default function MonthList({
                 <span className="slider round"></span>
               </label>
 
-              <div className="monthName">{month}</div>
+              <div
+                style={{
+                  backgroundColor: "rgb(54, 143, 173)",
+                  fontWeight: "bold",
+                  borderRadius: "5px",
+                }}
+                className="monthName">
+                {month}
+              </div>
 
-              <div>{cityRow[i]}</div>
+              <div
+                style={{
+                  backgroundColor: "rgb(54, 143, 173)",
+                  fontWeight: "bold",
+                  borderRadius: "5px",
+                }}>
+                {cityRow[i]}
+              </div>
             </div>
           );
         })}

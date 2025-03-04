@@ -121,10 +121,10 @@ export default function WorldMap({
           />
         ))}
       <img src={world} className="world-img" />
-      <div>
+      {/* <div>
         Window Screen Width: {ScreenWidth} Height: {ScreenHeight} WorldImgY:{" "}
         {WorldImgY} ScrollX:{WorldImgX}
-      </div>
+      </div> */}
       <></>
     </>
   );
