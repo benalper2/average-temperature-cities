@@ -81,53 +81,63 @@ export default function App() {
        </div> */}
 
       <div className="four-columns-min-max-filter">
-        <div style={{ fontSize: 25, fontWeight: "bold", color: "darkblue" }}>
+        <div style={{ fontSize: 20, fontWeight: "bold", color: "darkblue" }}>
           Average temperature °C
         </div>
-        <div style={{ fontSize: 25, fontWeight: "bold" }}>Min</div>
+        {/* <div style={{ fontSize: 25, fontWeight: "bold" }}>Min</div> */}
         <input
-          style={{ fontSize: 25, fontWeight: "bold" }}
+          style={{ fontSize: 20, fontWeight: "bold" }}
           id="searchbar"
           className="search"
           type="text"
-          placeholder="Min.."
+          placeholder="Min"
           onKeyDown={handleKeyDownMin}
         />
-        <div style={{ fontSize: 25, fontWeight: "bold" }}>Max</div>
+        {/* <div style={{ fontSize: 25, fontWeight: "bold" }}>Max</div> */}
+        <div style={{ fontSize: 20, fontWeight: "bold" }}>to&nbsp;</div>
+
         <input
-          style={{ fontSize: 25, fontWeight: "bold" }}
+          style={{ fontSize: 20, fontWeight: "bold" }}
           id="searchbar"
           className="search"
           type="text"
-          placeholder="Max.."
+          placeholder="Max"
           onKeyDown={handleKeyDownMax}
         />
       </div>
-
-      <div className="two-column-map-and-list">
-        <div className="world">
-          {/* <WorldMap coast_list={coast_list} /> */}
-          <WorldMap
-            setCityID={setCityID}
-            setCityRow={setCityRow}
-            minTemp={minTemp}
-            maxTemp={maxTemp}
-            monthToggles={monthToggles}
-            tickbox={tickbox}
-            tickIndex={tickIndex}
-          />
-        </div>
-        <div>
-          <MonthList
-            CityID={CityID}
-            cityRow={cityRow}
-            setMonthToggles={setMonthToggles}
-            monthToggles={monthToggles}
-            setTickbox={setTickbox}
-            setTickIndex={setTickIndex}
-          />
-        </div>
+      <div className="City-Name">
+        {cityRow && (
+          <div className="List-Title">
+            {cityRow[1]}&nbsp;{cityRow[2]}
+          </div>
+        )}
       </div>
+      <div className="CityName-Months">
+        <MonthList
+          CityID={CityID}
+          cityRow={cityRow}
+          setMonthToggles={setMonthToggles}
+          monthToggles={monthToggles}
+          setTickbox={setTickbox}
+          setTickIndex={setTickIndex}
+        />
+      </div>
+
+      {/* <div className="two-column-map-and-list"> */}
+      <div className="world">
+        {/* <WorldMap coast_list={coast_list} /> */}
+        <WorldMap
+          setCityID={setCityID}
+          setCityRow={setCityRow}
+          minTemp={minTemp}
+          maxTemp={maxTemp}
+          monthToggles={monthToggles}
+          tickbox={tickbox}
+          tickIndex={tickIndex}
+        />
+      </div>
+
+      {/* </div> */}
     </>
   );
 }

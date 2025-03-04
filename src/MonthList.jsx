@@ -14,6 +14,20 @@ export default function MonthList({
   setTickIndex,
 }) {
   const month_list = [
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
+    "May",
+    "Jun",
+    "Jul",
+    "Aug",
+    "Sep",
+    "Oct",
+    "Nov",
+    "Dec",
+  ];
+  const month_list2 = [
     "January",
     "February",
     "March",
@@ -68,42 +82,46 @@ export default function MonthList({
   };
 
   return (
-    <div>
+    <>
       {/* <div>{CityID}</div> */}
 
-      {cityRow && <div className="List-Title">{cityRow[1]}</div>}
-      {cityRow && <div className="List-Title">{cityRow[2]}</div>}
-      <div className="List-Title">Average Monthly</div>
+      {/* {cityRow && (
+        <div className="List-Title">
+          {cityRow[1]}&nbsp;{cityRow[2]}
+        </div>
+      )} */}
+      {/* {cityRow && <div className="List-Title">{cityRow[2]}</div>} */}
+      {/* <div className="List-Title">Average Monthly</div> */}
       <div className="Month-List">
-      {month_list.map((month, index) => {
-        let i = index + 6;
-        return (
-          <div className="two-columns-countrylist" key={month}>
-            <label className="switch">
-              <input
-                className="monthSwitch"
-                type="checkbox"
-                defaultChecked
-                onChange={(e) => handleMonthToggle(e, index)}
-                // onChange={(e) =>
-                //   setMonthToggles(({ monthToggles }) => ({
-                //     monthToggles: [
-                //       ...monthToggles.slice(0, index),
-                //      e.target.checked,
-                //       ...monthToggles.slice(index + 1),
-                //     ],
-                //   }))
-                // }
-              />
-              <span className="slider round"></span>
-            </label>
+        {month_list.map((month, index) => {
+          let i = index + 6;
+          return (
+            <div className="two-columns-countrylist" key={month}>
+              <label className="switch">
+                <input
+                  className="monthSwitch"
+                  type="checkbox"
+                  defaultChecked
+                  onChange={(e) => handleMonthToggle(e, index)}
+                  // onChange={(e) =>
+                  //   setMonthToggles(({ monthToggles }) => ({
+                  //     monthToggles: [
+                  //       ...monthToggles.slice(0, index),
+                  //      e.target.checked,
+                  //       ...monthToggles.slice(index + 1),
+                  //     ],
+                  //   }))
+                  // }
+                />
+                <span className="slider round"></span>
+              </label>
 
-            <div className="monthName">{month}</div>
+              <div className="monthName">{month}</div>
 
-            <div>{cityRow[i]}</div>
-          </div>
-        );
-      })}
+              <div>{cityRow[i]}</div>
+            </div>
+          );
+        })}
       </div>
       {/* <label className="switch"> */}
       {/* <input
@@ -112,6 +130,6 @@ export default function MonthList({
         onChange={(e) => setTickbox(e.target.checked)}
       /> */}
       {/* </label> */}
-    </div>
+    </>
   );
 }

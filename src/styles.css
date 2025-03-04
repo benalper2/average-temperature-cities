@@ -1,12 +1,12 @@
 body {
   overflow-y: scroll;
-  overflow-x: hidden;
+  overflow-x: scroll;
   background-color: rgb(54, 143, 173);
 }
 
 .world {
-  overflow-y: hidden;
-  overflow-x: scroll;
+  /* overflow-y: hidden;
+  overflow-x: scroll; */
 }
 
 h1 {
@@ -14,48 +14,70 @@ h1 {
   color: darkblue;
 }
 
-@media (min-width: 0px) {
-  .two-column-map-and-list {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: auto 100px;
-    width: 100%;
-  }
-  .Month-List {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-  }
+.two-column-map-and-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 100px;
+  width: 100%;
 }
+/* @media (min-width: 0px) { */
+.Month-List {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+/* } */
 
 @media (min-width: 800px) {
-  .two-column-map-and-list {
+  /* .two-column-map-and-list {
     display: grid;
     grid-template-columns: 1fr 1fr;
     width: 100%;
-  }
-  .Month-List {
+  } */
+  /* .Month-List {
     display: grid;
     grid-template-columns: 1fr;
-  }
+  } */
+}
+
+.CityName-Months {
+  position: fixed; /* Set the navbar to fixed position */
+  top: 0px; /* Position the navbar at the bottom of the page */
+  height: 200px;
+  width: 100px;
+  /* z-index: 1; */
+  left: 0;
+  padding-top: 50px;
 }
 
 .two-columns-countrylist {
   display: grid;
   grid-template-columns: 0.2fr 1fr 1fr;
-  width: 400px;
+  width: 120px;
   padding-bottom: 5px;
 }
 
 .four-columns-min-max-filter {
   display: grid;
   grid-template-columns: 5fr 1fr 0.5fr 1fr 0.5fr;
-  width: 625px;
+  width: 454px;
   padding-bottom: 5px;
   text-align: center;
+
+  margin: auto; /*Center navbar*/
+  position: fixed; /* Set the navbar to fixed position */
+  top: 0; /* Position the navbar at the top of the page */
+}
+
+.City-Name {
+  padding-top: 25px;
+  padding-left: 30px;
+  position: fixed;
+  top: 0;
+  left: 0;
 }
 
 input {
-  width: 100px;
+  width: 50px;
   border: 5px;
   border-color: white;
   background-color: lightblue;
@@ -70,7 +92,7 @@ input {
 }
 
 .List-Title {
-  font-size: 2em;
+  font-size: 1em;
   font-weight: bold;
   /* text-align: center; */
 }
@@ -87,7 +109,7 @@ input {
 
 /* width */
 ::-webkit-scrollbar {
-  width: 20px;
+  width: auto;
 }
 
 /* Track */
@@ -131,6 +153,8 @@ input {
   width: 30px;
   height: 17px;
   margin-top: 4px;
+  margin-left: 4px;
+  margin-right: 4px;
 }
 
 .switch input {
@@ -147,8 +171,8 @@ input {
   right: 0;
   bottom: 0;
   background-color: #ccc;
-  -webkit-transition: 0.4s;
-  transition: 0.4s;
+  /* -webkit-transition: 0.4s;
+  transition: 0.4s; */
 }
 
 .slider:before {
