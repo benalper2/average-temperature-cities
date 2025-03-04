@@ -9,10 +9,10 @@ export default function City({
   setCityRow,
   ScreenHeight,
   WorldImgY,
+  WorldImgX,
+  WorldScrollX,
 }) {
-  //props.id
-
-  var x = Math.round((-1 * (long * 1200)) / 363 + 595);
+  var x = Math.round((-1 * (long * 1200)) / 363 + 595 - WorldScrollX);
   // var y = Math.round((-1 * (lat * 604)) / 183 + 465);
   var y = Math.round(
     (-1 * (lat * 604)) / 183 + 298 + WorldImgY + window.scrollY
@@ -20,6 +20,7 @@ export default function City({
 
   var leftx = x + "px";
   var topy = y + "px";
+  var showBool = x > WorldImgX ? false : true; //???
   const stylep = { left: leftx, top: topy };
 
   const handleHover = () => {
@@ -29,16 +30,11 @@ export default function City({
   };
 
   // console.log("leftx: " + leftx + "  topy: " + topy);
-  return (
-    <>
-      <div className="circle" style={stylep} onClick={handleHover} />
-    </>
-  );
+  if (showBool) {
+    return (
+      <>
+        <div className="circle" style={stylep} onClick={handleHover} />
+      </>
+    );
+  }
 }
-
-// var left = 5000 + 'px';
-// var top = 5000 + 'px';
-// var padding = 5000 + 'px';
-// return (
-//     <div id="bird" style={{padding, left, top,position:'absolute'}}/>
-// )

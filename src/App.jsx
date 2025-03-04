@@ -76,13 +76,14 @@ export default function App() {
 
   return (
     <>
-      <div>
+      {/* <div>
         <h1>Average Monthly Temperatures</h1>
-        {/* <p className="read-the-docs">Create a map</p> */}
-      </div>
+       </div> */}
 
       <div className="four-columns-min-max-filter">
-        <div>All months average temperature in Celcius</div>
+        <div style={{ fontSize: 25, fontWeight: "bold", color: "darkblue" }}>
+          Average temperature °C
+        </div>
         <div style={{ fontSize: 25, fontWeight: "bold" }}>Min</div>
         <input
           style={{ fontSize: 25, fontWeight: "bold" }}

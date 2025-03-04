@@ -16,6 +16,8 @@ export default function WorldMap({
   const [ScreenWidth, setScreenWidth] = useState([]);
   const [ScreenHeight, setScreenHeight] = useState([]);
   const [WorldImgY, setWorldImgY] = useState([]);
+  const [WorldImgX, setWorldImgX] = useState([]);
+  const [WorldScrollX, setWorldScrollX] = useState([]);
 
   let textLines;
   var CityTemps = [];
@@ -79,9 +81,12 @@ export default function WorldMap({
   useEffect(() => {
     window.addEventListener("resize", onResize);
     window.addEventListener("scroll", onResize);
+    let elem = document.querySelector(".world");
+    elem.addEventListener("scroll", onResize);
     return () => {
       window.removeEventListener("resize", onResize);
       window.removeEventListener("scroll", onResize);
+      elem.removeEventListener("scroll", onResize);
     };
   }, []);
 
@@ -89,19 +94,13 @@ export default function WorldMap({
     //console.log("resized to: ", window.innerWidth, "x", window.innerHeight);
     setScreenWidth(window.innerWidth);
     setScreenHeight(window.innerHeight);
-    let elem = document.querySelector(".world-img");
+    let elem = document.querySelector(".world");
     let rect = elem.getBoundingClientRect();
     setWorldImgY(rect.y);
+    console.log(elem);
+    setWorldImgX(rect.width);
+    setWorldScrollX(elem.scrollLeft);
   };
-  // const showWorldY = () => {
-  //   let elem = document.getElementsByClassName("world")[0];
-  //   let rect = elem.getBoundingClientRect();
-  //   //const rectx = rect.left + window.scrollX;
-  //   const recty = rect.top;
-  //   //console.log("recty: " + recty);
-  //   setRectY(recty);
-  //   // setCityRow(cityRow);
-  // };
 
   return (
     <>
@@ -117,13 +116,14 @@ export default function WorldMap({
             setCityRow={setCityRow}
             ScreenHeight={ScreenHeight}
             WorldImgY={WorldImgY}
-            //    onResize={onResize}
+            WorldImgX={WorldImgX}
+            WorldScrollX={WorldScrollX}
           />
         ))}
       <img src={world} className="world-img" />
       <div>
         Window Screen Width: {ScreenWidth} Height: {ScreenHeight} WorldImgY:{" "}
-        {WorldImgY} ScrollY: {window.scrollY}
+        {WorldImgY} ScrollX:{WorldImgX}
       </div>
       <></>
     </>

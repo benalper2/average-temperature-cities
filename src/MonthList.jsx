@@ -74,6 +74,7 @@ export default function MonthList({
       {cityRow && <div className="List-Title">{cityRow[1]}</div>}
       {cityRow && <div className="List-Title">{cityRow[2]}</div>}
       <div className="List-Title">Average Monthly</div>
+      <div className="Month-List">
       {month_list.map((month, index) => {
         let i = index + 6;
         return (
@@ -103,6 +104,7 @@ export default function MonthList({
           </div>
         );
       })}
+      </div>
       {/* <label className="switch"> */}
       {/* <input
         className="monthSwitch"

@@ -1,48 +1,42 @@
-/* {
-  margin: 0;
-  padding: 0;
-} */
-
 body {
   overflow-y: scroll;
   overflow-x: hidden;
   background-color: rgb(54, 143, 173);
 }
-/*
-#name {
-  position: absolute;
-  background-color: white;
-  width: fit-content;
-  opacity: 0;
-  border-radius: 5px;
-  border: 3px solid pink;
-  padding: 0px 5px;
-  font-size: 1.5rem;
-}
 
-#timeCont {
-  background-color: white;
-  width: fit-content;
-  font-size: 1.5rem;
-  padding: 5px 5px;
-  border-radius: 5px;
-  border: 3px solid rgb(245, 128, 128);
+.world {
+  overflow-y: hidden;
+  overflow-x: scroll;
 }
-
-svg path {
-  cursor: pointer;
-} */
 
 h1 {
   text-align: center;
   color: darkblue;
-  /* padding-top: 20px; */
 }
 
-.two-column-map-and-list {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  width: 100%;
+@media (min-width: 0px) {
+  .two-column-map-and-list {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 100px;
+    width: 100%;
+  }
+  .Month-List {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 800px) {
+  .two-column-map-and-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+  }
+  .Month-List {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
 }
 
 .two-columns-countrylist {
@@ -54,8 +48,8 @@ h1 {
 
 .four-columns-min-max-filter {
   display: grid;
-  grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
-  width: 70%;
+  grid-template-columns: 5fr 1fr 0.5fr 1fr 0.5fr;
+  width: 625px;
   padding-bottom: 5px;
   text-align: center;
 }
@@ -93,7 +87,7 @@ input {
 
 /* width */
 ::-webkit-scrollbar {
-  width: 40px;
+  width: 20px;
 }
 
 /* Track */
@@ -113,19 +107,13 @@ input {
 ::-webkit-scrollbar-thumb:hover {
   background: darkblue;
 }
-/* svg path:hover {
-    fill: pink;
-  } */
 
 .circle {
-  width: 6px; /*6*/
+  width: 6px;
   height: 6px;
   border-radius: 50%;
-  /* box-shadow: 0px 0px 1px 1px #2615c21a; */
   background-color: rgba(26, 10, 248, 0.5);
   position: absolute;
-  /* left: 500px; */
-  /* top: 500px; */
   transform: translate(-50%, -50%);
 }
 
@@ -136,7 +124,6 @@ input {
 .monthSwitch {
   vertical-align: -20px;
 }
-/*From w3 schhols*/
 
 .switch {
   position: relative;
@@ -190,7 +177,6 @@ input:checked + .slider:before {
   transform: translateX(13px);
 }
 
-/* Rounded sliders */
 .slider.round {
   border-radius: 17px;
 }
