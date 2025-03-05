@@ -81,7 +81,14 @@ export default function App() {
        </div> */}
 
       <div className="four-columns-min-max-filter">
-        <div style={{ fontSize: 20, fontWeight: "bold", color: "darkblue" }}>
+        <div
+          style={{
+            fontSize: 20,
+            fontWeight: "bold",
+            color: "darkblue",
+            marginTop: "5px",
+            textAlign: "center",
+          }}>
           Average temperature °C
         </div>
         {/* <div style={{ fontSize: 25, fontWeight: "bold" }}>Min</div> */}
@@ -94,7 +101,15 @@ export default function App() {
           onKeyDown={handleKeyDownMin}
         />
         {/* <div style={{ fontSize: 25, fontWeight: "bold" }}>Max</div> */}
-        <div style={{ fontSize: 20, fontWeight: "bold" }}>to&nbsp;</div>
+        <div
+          style={{
+            fontSize: 20,
+            fontWeight: "bold",
+            marginTop: "5px",
+            textAlign: "center",
+          }}>
+          &nbsp;to&nbsp;
+        </div>
 
         <input
           style={{ fontSize: 20, fontWeight: "bold" }}
