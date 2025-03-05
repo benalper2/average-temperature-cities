@@ -105,13 +105,7 @@ export default function App() {
           onKeyDown={handleKeyDownMax}
         />
       </div>
-      <div
-        style={{
-          backgroundColor: "rgb(54, 143, 173)",
-          fontWeight: "bold",
-          borderRadius: "5px",
-        }}
-        className="City-Name">
+      <div className="City-Name">
         {cityRow && (
           <div className="List-Title">
             {cityRow[1]}&nbsp;{cityRow[2]}

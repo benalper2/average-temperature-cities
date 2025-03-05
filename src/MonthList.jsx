@@ -92,6 +92,7 @@ export default function MonthList({
       )} */}
       {/* {cityRow && <div className="List-Title">{cityRow[2]}</div>} */}
       {/* <div className="List-Title">Average Monthly</div> */}
+
       <div className="Month-List">
         {month_list.map((month, index) => {
           let i = index + 6;
@@ -121,6 +122,7 @@ export default function MonthList({
                   backgroundColor: "rgb(54, 143, 173)",
                   fontWeight: "bold",
                   borderRadius: "5px",
+                  textAlign: "center",
                 }}
                 className="monthName">
                 {month}
@@ -131,6 +133,7 @@ export default function MonthList({
                   backgroundColor: "rgb(54, 143, 173)",
                   fontWeight: "bold",
                   borderRadius: "5px",
+                  textAlign: "center",
                 }}>
                 {cityRow[i]}
               </div>
