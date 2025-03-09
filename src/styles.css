@@ -1,16 +1,19 @@
 body {
-  overflow-y: none;
-  overflow-x: none;
+  overflow-y: hidden;
+  overflow-x: hidden;
   background-color: rgb(54, 143, 173);
 }
 
 .world {
-  /* overflow-y: hidden;
-  overflow-x: scroll; */
-  /* display: flex;
-  overflow: scroll;
-  flex: none;
-  transform-origin: 50% 50%; */
+  /* overflow-y: scroll; */
+  /* overflow-x: scroll;  */
+  background-color: rgb(54, 143, 173);
+  /* background-size: 1300px 700px; */
+  /* display: flex; */
+  /* flex: none;*/
+  /* margin-right: 20%; */
+  /* text-align: right;  */
+  /* transform-origin: 50% 50%; */
 }
 
 h1 {
@@ -104,8 +107,8 @@ input {
 .country-scroll {
   height: 800px;
   width: 350px;
-  overflow-y: none;
-  overflow-x: none;
+  overflow-y: hidden;
+  overflow-x: hidden;
 }
 
 .List-Title {

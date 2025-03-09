@@ -18,6 +18,7 @@ export default function WorldMap({
   const [WorldImgY, setWorldImgY] = useState([]);
   const [WorldImgX, setWorldImgX] = useState([]);
   const [WorldScrollX, setWorldScrollX] = useState([]);
+  const [WorldScrollY, setWorldScrollY] = useState([]);
 
   let textLines;
   var CityTemps = [];
@@ -100,6 +101,7 @@ export default function WorldMap({
     console.log(elem);
     setWorldImgX(rect.width);
     setWorldScrollX(elem.scrollLeft);
+    setWorldScrollY(elem.scrollTop);
   };
 
   return (
@@ -118,6 +120,7 @@ export default function WorldMap({
             WorldImgY={WorldImgY}
             WorldImgX={WorldImgX}
             WorldScrollX={WorldScrollX}
+            WorldScrollY={WorldScrollY}
           />
         ))}
       <img src={world} className="world-img" />

@@ -30,8 +30,8 @@ export default function App() {
     true,
   ]);
 
-  const el = document.querySelector(".world");
-  let scale = 1;
+  // const el = document.querySelector(".world");
+  // let scale = 1;
 
   // useEffect(() => {
   //   if (el) {
@@ -166,7 +166,12 @@ export default function App() {
       </div>
 
       {/* <div className="two-column-map-and-list"> */}
-      <TransformWrapper>
+      <TransformWrapper
+        limitToBounds={false} // Allows free movement
+        centerContent={false} // Prevents auto-centering
+        minScale={1} // Prevents zooming out too much
+        maxScale={5} // Limits zoom-in level
+      >
         <TransformComponent>
           <div className="world">
             {/* <WorldMap coast_list={coast_list} /> */}

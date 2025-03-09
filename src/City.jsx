@@ -11,12 +11,14 @@ export default function City({
   WorldImgY,
   WorldImgX,
   WorldScrollX,
+  WorldScrollY,
 }) {
   var x = Math.round((-1 * (long * 1200)) / 363 + 595 - WorldScrollX);
   // var y = Math.round((-1 * (lat * 604)) / 183 + 465);
   var y = Math.round(
     (-1 * (lat * 604)) / 183 + 298 + WorldImgY + window.scrollY
   );
+  var y = Math.round((-1 * (lat * 604)) / 183 + 298 - WorldScrollY);
 
   var leftx = x + "px";
   var topy = y + "px";
