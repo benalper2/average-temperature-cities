@@ -1,12 +1,16 @@
 body {
-  overflow-y: scroll;
-  overflow-x: scroll;
+  overflow-y: none;
+  overflow-x: none;
   background-color: rgb(54, 143, 173);
 }
 
 .world {
   /* overflow-y: hidden;
   overflow-x: scroll; */
+  /* display: flex;
+  overflow: scroll;
+  flex: none;
+  transform-origin: 50% 50%; */
 }
 
 h1 {
@@ -65,7 +69,7 @@ h1 {
   width: 454px;
   padding-bottom: 5px;
   text-align: center;
-
+  z-index: 1;
   margin: auto; /*Center navbar*/
   position: fixed; /* Set the navbar to fixed position */
   top: 0; /* Position the navbar at the top of the page */
@@ -100,8 +104,8 @@ input {
 .country-scroll {
   height: 800px;
   width: 350px;
-  overflow-y: hidden;
-  overflow-x: hidden;
+  overflow-y: none;
+  overflow-x: none;
 }
 
 .List-Title {

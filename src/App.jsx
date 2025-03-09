@@ -1,5 +1,6 @@
 import "./styles.css";
 import React from "react";
+import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
 
 import WorldMap from "./WorldMap";
 
@@ -28,6 +29,30 @@ export default function App() {
     true,
     true,
   ]);
+
+  const el = document.querySelector(".world");
+  let scale = 1;
+
+  // useEffect(() => {
+  //   if (el) {
+  //     el.addEventListener("wheel", zoom, { passive: false });
+  //   }
+  //   return () => {
+  //     window.removeEventListener("wheel", zoom);
+  //   };
+  // }, []);
+
+  // const zoom = (event) => {
+  //   event.preventDefault();
+  //   console.log("zoom event:" + event);
+  //   scale += event.deltaY * -0.01;
+  //   console.log("event.deltaY:" + event.deltaY);
+  //   // Restrict scale
+  //   scale = Math.min(Math.max(0.125, scale), 4);
+
+  //   // Apply scale transform
+  //   el.style.transform = `scale(${scale})`;
+  // };
 
   const handleKeyDownMin = (event) => {
     // if (event.key === "Enter") {
@@ -141,19 +166,22 @@ export default function App() {
       </div>
 
       {/* <div className="two-column-map-and-list"> */}
-      <div className="world">
-        {/* <WorldMap coast_list={coast_list} /> */}
-        <WorldMap
-          setCityID={setCityID}
-          setCityRow={setCityRow}
-          minTemp={minTemp}
-          maxTemp={maxTemp}
-          monthToggles={monthToggles}
-          tickbox={tickbox}
-          tickIndex={tickIndex}
-        />
-      </div>
-
+      <TransformWrapper>
+        <TransformComponent>
+          <div className="world">
+            {/* <WorldMap coast_list={coast_list} /> */}
+            <WorldMap
+              setCityID={setCityID}
+              setCityRow={setCityRow}
+              minTemp={minTemp}
+              maxTemp={maxTemp}
+              monthToggles={monthToggles}
+              tickbox={tickbox}
+              tickIndex={tickIndex}
+            />
+          </div>
+        </TransformComponent>
+      </TransformWrapper>
       {/* </div> */}
     </>
   );
