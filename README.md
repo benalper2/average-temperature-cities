@@ -1,5 +1,6 @@
 npm create vite
 npm i
+npm install react-zoom-pan-pinch
 npm run dev
 
 # React + Vite
