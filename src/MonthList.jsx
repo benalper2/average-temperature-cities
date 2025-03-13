@@ -97,7 +97,7 @@ export default function MonthList({
         {month_list.map((month, index) => {
           let i = index + 6;
           return (
-            <div className="two-columns-countrylist" key={month}>
+            <div className="Month-Row" key={month}>
               <label className="switch">
                 <input
                   className="monthSwitch"
@@ -117,26 +117,9 @@ export default function MonthList({
                 <span className="slider round"></span>
               </label>
 
-              <div
-                style={{
-                  backgroundColor: "rgb(54, 143, 173)",
-                  fontWeight: "bold",
-                  borderRadius: "5px",
-                  textAlign: "center",
-                }}
-                className="monthName">
-                {month}
-              </div>
+              <div className="monthName">{month}</div>
 
-              <div
-                style={{
-                  backgroundColor: "rgb(54, 143, 173)",
-                  fontWeight: "bold",
-                  borderRadius: "5px",
-                  textAlign: "center",
-                }}>
-                {cityRow[i]}
-              </div>
+              <div className="monthTemperature">{cityRow[i]}</div>
             </div>
           );
         })}

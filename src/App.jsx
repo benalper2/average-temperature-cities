@@ -105,64 +105,51 @@ export default function App() {
         <h1>Average Monthly Temperatures</h1>
        </div> */}
 
-      <div className="four-columns-min-max-filter">
-        <div
-          style={{
-            fontSize: 20,
-            fontWeight: "bold",
-            color: "darkblue",
-            marginTop: "5px",
-            textAlign: "center",
-          }}>
-          Average temperature °C
-        </div>
-        {/* <div style={{ fontSize: 25, fontWeight: "bold" }}>Min</div> */}
+      <div className="topbar">
+        {/* topbar column1 */}
+        <div className="topbar-div">&nbsp;&nbsp;</div>
+        {/* topbar column2 */}
         <input
-          style={{ fontSize: 20, fontWeight: "bold" }}
           id="searchbar"
-          className="search"
+          className="input"
           type="text"
-          placeholder="Min"
+          placeholder="Min Temp"
           onChange={handleKeyDownMin}
           // onKeyDown={handleKeyDownMin}
         />
-        {/* <div style={{ fontSize: 25, fontWeight: "bold" }}>Max</div> */}
-        <div
-          style={{
-            fontSize: 20,
-            fontWeight: "bold",
-            marginTop: "5px",
-            textAlign: "center",
-          }}>
-          &nbsp;to&nbsp;
-        </div>
-
+        {/* topbar column3 */}
+        <div className="topbar-div">&nbsp;&nbsp;</div>
+        {/* topbar column4 */}
         <input
-          style={{ fontSize: 20, fontWeight: "bold" }}
           id="searchbar"
           className="search"
           type="text"
-          placeholder="Max"
+          placeholder="Max Temp"
           // onKeyDown={handleKeyDownMax}
           onChange={handleKeyDownMax}
         />
+        <button className="topbar-filter-button">Filters</button>
       </div>
-      <div className="City-Name">
-        {cityRow && (
-          <div className="List-Title">
-            {cityRow[1]}&nbsp;{cityRow[2]}
-          </div>
-        )}
-      </div>
-      <div className="CityName-Months">
-        <MonthList
-          CityID={CityID}
-          cityRow={cityRow}
-          setMonthToggles={setMonthToggles}
-          monthToggles={monthToggles}
-          setTickbox={setTickbox}
-          setTickIndex={setTickIndex}
-        />
+      <div className="sidebar-footer">
+        <div className="City-Name">
+          {cityRow && (
+            <div className="List-Title">
+              {cityRow[1]}
+              <br />
+              {cityRow[2]}
+            </div>
+          )}
+        </div>
+        <div>
+          <MonthList
+            CityID={CityID}
+            cityRow={cityRow}
+            setMonthToggles={setMonthToggles}
+            monthToggles={monthToggles}
+            setTickbox={setTickbox}
+            setTickIndex={setTickIndex}
+          />
+        </div>
       </div>
 
       {/* <div className="two-column-map-and-list"> */}

@@ -1,24 +1,68 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+
 body {
   overflow-y: hidden;
   overflow-x: hidden;
   background-color: rgb(54, 143, 173);
+  /* font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif; */
 }
 
 .world {
-  /* overflow-y: scroll; */
-  /* overflow-x: scroll;  */
   background-color: rgb(54, 143, 173);
-  /* background-size: 1300px 700px; */
-  /* display: flex; */
-  /* flex: none;*/
-  /* margin-right: 20%; */
-  /* text-align: right;  */
-  /* transform-origin: 50% 50%; */
 }
 
-h1 {
+.topbar {
+  background-color: #000;
+  /* display: grid;
+  grid-template-columns: 0fr 1fr 0fr 1fr; */
+  width: 100%;
+  height: 33px;
+  /* padding-bottom: 5px; */
+  z-index: 1;
+  position: fixed; /* Set the navbar to fixed position */
+  top: 0; /* Position the navbar at the top of the page */
+  left: 0;
+}
+
+input {
+  font-size: 12px;
+  font-weight: bold;
+  color: #999;
+  float: left;
+  height: 21px;
+  width: 100px;
+  border: 5px;
+  border-color: white;
+  background-color: white;
+  border-radius: 5px;
+  z-index: 1;
+  margin-top: 5px;
   text-align: center;
-  color: darkblue;
+}
+
+.topbar-div {
+  float: left;
+}
+
+.topbar-filter-button {
+  float: right;
+  font-size: 12px;
+  /* font-weight: bold; */
+  background-color: #000;
+  color: white;
+  width: 80px;
+  height: 33px;
+  text-align: center;
+  border: 1px solid transparent;
+  cursor: pointer;
+  border-color: #000;
+  /* transition: border-color 0.25s; */
+  font-family: Inter, sans-serif;
+  /* , system-ui, Avenir, Helvetica, Arial, sans-serif; */
+}
+
+.topbar-filter-button:focus {
+  border-color: #fff;
 }
 
 .two-column-map-and-list {
@@ -27,12 +71,6 @@ h1 {
   grid-template-rows: auto 100px;
   width: 100%;
 }
-/* @media (min-width: 0px) { */
-.Month-List {
-  display: grid;
-  grid-template-columns: 1fr;
-}
-/* } */
 
 @media (min-width: 800px) {
   /* .two-column-map-and-list {
@@ -46,62 +84,58 @@ h1 {
   } */
 }
 
-.CityName-Months {
-  position: fixed; /* Set the navbar to fixed position */
-  top: 0px; /* Position the navbar at the bottom of the page */
-  /* height: 200px; */
-  /* width: 100px; */
-  z-index: 1;
-  right: 0;
-  padding-top: 65;
-  margin-top: 65px;
-  /* margin-right: 5px; */
-  background-color: rgb(54, 143, 173);
-}
-
-.two-columns-countrylist {
-  display: grid;
-  grid-template-columns: 0.2fr 1fr 1fr;
-  width: 120px;
-  padding-bottom: 5px;
-}
-
-.four-columns-min-max-filter {
-  display: grid;
-  grid-template-columns: 5fr 1fr 0.5fr 1fr 0.5fr;
-  width: 454px;
-  padding-bottom: 5px;
-  text-align: center;
-  z-index: 1;
-  margin: auto; /*Center navbar*/
-  position: fixed; /* Set the navbar to fixed position */
-  top: 0; /* Position the navbar at the top of the page */
-}
-
 .City-Name {
-  margin-top: 40px;
-  /* margin-right: 5px; */
-  padding: 1px;
-  padding-right: 5px;
-  /* margin-left: 30px; */
-  z-index: 1;
-  position: fixed;
-  top: 0;
-  right: 0;
-  background-color: rgb(54, 143, 173);
+  color: #2196f3;
+  text-align: "center";
+  /* margin: 10px; */
+}
+
+/* @media (min-width: 0px) { */
+.Month-List {
+  display: grid;
+  grid-template-columns: 1fr;
+  margin: 15px;
+  align: center;
+  text-align: center;
+}
+/* } */
+
+.Month-Row {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  width: 100%;
+  padding-bottom: 5px;
+}
+
+.monthName {
+  /* background-color: rgb(54, 143, 173); */
+  font-weight: "bold";
+  /* border-radius: "5px"; */
+  text-align: "center";
+  font-size: 15px;
   font-weight: bold;
 }
 
-input {
-  height: 25px;
-  width: 40px;
-  border: 5px;
-  border-color: white;
-  background-color: lightblue;
-  border-radius: 5px;
+.monthTemperature {
+  /* background-color: rgb(54, 143, 173); */
+  font-weight: "bold";
+  /* border-radius: "5px"; */
+  text-align: "center";
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.sidebar-footer {
+  top: 33px;
+  left: 0;
+  margin: 0;
+  padding: 0;
+  width: 175px;
+  background-color: #f1f1f1;
+  position: fixed;
+  height: 100%;
+  overflow: auto;
   z-index: 1;
-  margin-top: 5px;
-  text-align: center;
 }
 
 .country-scroll {
@@ -112,17 +146,13 @@ input {
 }
 
 .List-Title {
-  font-size: 1em;
+  font-size: 14px;
   font-weight: bold;
-  /* text-align: center; */
+  margin: 10px;
+  text-align: center;
 }
 
 .countryName {
-  font-size: 1.3em;
-  font-weight: bold;
-}
-
-.InputCoastRatio {
   font-size: 1.3em;
   font-weight: bold;
 }
