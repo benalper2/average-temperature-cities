@@ -72,21 +72,23 @@ input {
   width: 100%;
 }
 
-@media (min-width: 800px) {
-  /* .two-column-map-and-list {
+/* @media (min-width: 800px) { */
+/* .two-column-map-and-list {
     display: grid;
     grid-template-columns: 1fr 1fr;
     width: 100%;
   } */
-  /* .Month-List {
+
+/* .Month-List {
     display: grid;
     grid-template-columns: 1fr;
   } */
-}
+/* } */
 
 .City-Name {
   color: #2196f3;
   text-align: "center";
+  height: 45px;
   /* margin: 10px; */
 }
 
@@ -94,7 +96,7 @@ input {
 .Month-List {
   display: grid;
   grid-template-columns: 1fr;
-  margin: 15px;
+  margin: 10px;
   align: center;
   text-align: center;
 }
@@ -130,8 +132,8 @@ input {
   left: 0;
   margin: 0;
   padding: 0;
-  width: 175px;
-  background-color: #f1f1f1;
+  width: 150px;
+  background-color: #fff;
   position: fixed;
   height: 100%;
   overflow: auto;
