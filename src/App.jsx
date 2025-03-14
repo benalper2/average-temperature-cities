@@ -107,27 +107,29 @@ export default function App() {
 
       <div className="topbar">
         {/* topbar column1 */}
-        <div className="topbar-div">&nbsp;&nbsp;</div>
-        {/* topbar column2 */}
-        <input
-          id="searchbar"
-          className="input"
-          type="text"
-          placeholder="Min Temp"
-          onChange={handleKeyDownMin}
-          // onKeyDown={handleKeyDownMin}
-        />
-        {/* topbar column3 */}
-        <div className="topbar-div">&nbsp;&nbsp;</div>
-        {/* topbar column4 */}
-        <input
-          id="searchbar"
-          className="search"
-          type="text"
-          placeholder="Max Temp"
-          // onKeyDown={handleKeyDownMax}
-          onChange={handleKeyDownMax}
-        />
+        <div className="topbar-center">
+          <div className="topbar-div">&nbsp;&nbsp;</div>
+          {/* topbar column2 */}
+          <input
+            id="searchbar"
+            className="input"
+            type="text"
+            placeholder="Min Temp"
+            onChange={handleKeyDownMin}
+            // onKeyDown={handleKeyDownMin}
+          />
+          {/* topbar column3 */}
+          <div className="topbar-div">&nbsp;&nbsp;</div>
+          {/* topbar column4 */}
+          <input
+            id="searchbar"
+            className="search"
+            type="text"
+            placeholder="Max Temp"
+            // onKeyDown={handleKeyDownMax}
+            onChange={handleKeyDownMax}
+          />
+        </div>
         <button className="topbar-filter-button">Filters</button>
       </div>
       <div className="sidebar-footer">
