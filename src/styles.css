@@ -37,14 +37,14 @@ input {
   color: #999;
   float: left;
   /* align: center; */
-  height: 21px;
+  height: 18px;
   width: 100px;
   border: 5px;
   border-color: white;
   background-color: white;
   border-radius: 5px;
   z-index: 1;
-  margin-top: 5px;
+  margin-top: 6px;
   text-align: center;
 }
 
