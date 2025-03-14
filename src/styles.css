@@ -22,6 +22,8 @@ body {
   position: fixed; /* Set the navbar to fixed position */
   top: 0; /* Position the navbar at the top of the page */
   left: 0;
+  display: flex;
+  align-items: center;
 }
 
 .topbar-center {
@@ -29,6 +31,8 @@ body {
   padding-left: 50px;
   margin-left: auto;
   margin-right: auto;
+  display: flex;
+  align-items: center;
 }
 
 input {
@@ -44,7 +48,8 @@ input {
   background-color: white;
   border-radius: 5px;
   z-index: 1;
-  margin-top: 6px;
+  /* display: inline-block;
+  vertical-align: middle; */
   text-align: center;
 }
 
