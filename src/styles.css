@@ -161,7 +161,7 @@ input {
     grid-template-columns: 1fr;
     margin-left: 10px;
     margin-right: 10px;
-    margin-top: 5px;
+    margin-top: 6px;
 
     align: center;
     text-align: center;
@@ -260,7 +260,7 @@ input {
 .List-Title {
   font-size: 14px;
   font-weight: bold;
-  margin: 5px;
+  margin: 4px;
   text-align: center;
 }
 
