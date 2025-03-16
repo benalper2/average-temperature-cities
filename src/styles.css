@@ -159,7 +159,10 @@ input {
   .Month-List {
     display: grid;
     grid-template-columns: 1fr;
-    margin: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 5px;
+
     align: center;
     text-align: center;
   }
@@ -207,7 +210,7 @@ input {
     text-align: "center";
     font-size: 15px;
     font-weight: bold;
-    padding-top: 3px;
+    padding-top: 2px;
   }
 }
 
@@ -231,7 +234,7 @@ input {
     text-align: "center";
     font-size: 15px;
     font-weight: bold;
-    padding-top: 3px;
+    padding-top: 2px;
   }
 }
 
