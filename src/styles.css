@@ -18,7 +18,6 @@ body {
     width: calc(100% - 150px);
   }
 }
-
 @media (min-width: 600px) {
   .world {
     background-color: rgb(54, 143, 173);
@@ -128,8 +127,7 @@ input {
 @media (max-width: 599px) {
   .sidebar-footer {
     left: 0px;
-    top: 33px;
-    /* bottom: 0px; */
+    bottom: 0px;
     width: 100%;
     height: 180px;
     position: fixed;
