@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import world from "./assets/Equirectangular_projection_SWtrim1.jpg";
 import City from "./City.jsx";
+import "./styles.css";
 
 export default function WorldMap({
   setCityID,
@@ -79,6 +80,28 @@ export default function WorldMap({
       });
   }, [minTemp, maxTemp, tickbox, tickIndex]);
 
+  const [renderCount, setRenderCount] = useState(0);
+  // const [firstRender, setFirstRender] = useState(true);
+  const [imgClassName, setImgClassName] = useState("worldimg");
+
+  useEffect(() => {
+    // console.log("renderCount: " + renderCount);
+    // console.log("firstRender: " + firstRender);
+    setRenderCount((prev) => prev + 1);
+    // setFirstRender(false);
+
+    // if (firstRender === false) {
+    if (renderCount >= 1) {
+      setImgClassName(""); // Remove class after first render
+      onResize();
+    }
+  }, [window.innerWidth]);
+
+  // useEffect(() => {
+  //   console.log("Window resized:", window.innerWidth);
+  //   setImgClassName("");
+  // }, [window.innerWidth]); // Runs every time windowSize changes
+
   useEffect(() => {
     window.addEventListener("resize", onResize);
     window.addEventListener("scroll", onResize);
@@ -121,9 +144,12 @@ export default function WorldMap({
             WorldImgX={WorldImgX}
             WorldScrollX={WorldScrollX}
             WorldScrollY={WorldScrollY}
+            renderCount={renderCount}
           />
         ))}
-      <img src={world} className="world-img" />
+
+      <img src={world} className={imgClassName} />
+      {/* <img src={world} className="worldimg" /> */}
       {/* <div>
         Window Screen Width: {ScreenWidth} Height: {ScreenHeight} WorldImgY:{" "}
         {WorldImgY} ScrollX:{WorldImgX}

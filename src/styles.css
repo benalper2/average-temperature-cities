@@ -3,12 +3,42 @@
 body {
   overflow-y: hidden;
   overflow-x: hidden;
+  /* background-color: red; */
+  margin: 0;
+  padding: 0;
+  display: block;
+  width: 100vw;
+  height: 100vw;
   background-color: rgb(54, 143, 173);
   /* font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif; */
 }
 
-.world {
-  background-color: rgb(54, 143, 173);
+@media (min-width: 600px) {
+  .worldimg {
+    width: calc(100% - 150px);
+  }
+}
+@media (min-width: 600px) {
+  .world {
+    background-color: rgb(54, 143, 173);
+    margin-top: 33px;
+    /* margin-left: 150px; */
+    width: 100vw;
+    height: 100vw;
+    object-fit: cover;
+    /* height: 100%; */
+    /* width: 100%; */
+    /* background-size: cover; */
+  }
+}
+
+@media (max-width: 599px) {
+  .world {
+    background-color: rgb(54, 143, 173);
+    margin-top: 33px;
+    margin-left: 0px;
+    width: 100vw;
+  }
 }
 
 .topbar {
@@ -81,7 +111,8 @@ input {
 @media (min-width: 600px) {
   .sidebar-footer {
     top: 33px;
-    left: 0px;
+    /* left: 0px; */
+    right: 0px;
     margin: 0;
     padding: 0;
     width: 150px;

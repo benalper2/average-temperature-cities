@@ -57,7 +57,7 @@ export default function App() {
   const handleKeyDownMin = (event) => {
     // if (event.key === "Enter") {
     console.log("Type is " + typeof event.target.value);
-    if (isNaN(event.target.value)) {
+    if (isNaN(event.target.value) || event.target.value === "") {
       setMinTemp(-99);
       console.log("NaN");
     } else {
@@ -79,7 +79,7 @@ export default function App() {
   const handleKeyDownMax = (event) => {
     // if (event.key === "Enter") {
     console.log("Type is " + typeof event.target.value);
-    if (isNaN(event.target.value)) {
+    if (isNaN(event.target.value) || event.target.value === "") {
       setMaxTemp(99);
       console.log("NaN");
     } else {
@@ -91,6 +91,8 @@ export default function App() {
         console.log("More than 99");
       } else if (num < minTemp) {
         console.log("Less than MaxTemp");
+      } else if (num === 0) {
+        console.log("Zero and Backspace: " + event.key);
       } else {
         console.log("do validate " + num);
         setMaxTemp(num);
@@ -98,7 +100,6 @@ export default function App() {
     }
     // }
   };
-
   return (
     <>
       {/* <div>
@@ -126,7 +127,7 @@ export default function App() {
             className="search"
             type="text"
             placeholder="Max Temp"
-            // onKeyDown={handleKeyDownMax}
+            // onKeyDown={handleBackspaceMax}
             onChange={handleKeyDownMax}
           />
         </div>
