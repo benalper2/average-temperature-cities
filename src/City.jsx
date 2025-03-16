@@ -23,7 +23,7 @@ export default function City({
   var imgScreenRatio = (window.innerWidth - 150) / 1200;
   // console.log("firstRender: " + firstRender);
   // console.log("renderCount: " + renderCount);
-  if (renderCount < 2) {
+  if (renderCount < 2 && window.innerWidth > 599) {
     // console.log("renderCount2: " + renderCount);
     x = Math.round(
       (-1 * (long * 1215 * imgScreenRatio)) / 363 +

@@ -78,6 +78,7 @@ export default function App() {
 
   const handleKeyDownMax = (event) => {
     // if (event.key === "Enter") {
+    console.log("window.innerWidth: " + window.innerWidth);
     console.log("Type is " + typeof event.target.value);
     if (isNaN(event.target.value) || event.target.value === "") {
       setMaxTemp(99);
