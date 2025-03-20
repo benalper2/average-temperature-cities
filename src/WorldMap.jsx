@@ -27,7 +27,7 @@ export default function WorldMap({
   var KeepRow;
 
   useEffect(() => {
-    fetch("./data.csv")
+    fetch("/data.csv")
       .then((response) => response.text())
       .then((responseText) => {
         //setText(responseText);
