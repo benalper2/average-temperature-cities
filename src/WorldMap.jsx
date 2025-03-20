@@ -77,7 +77,8 @@ export default function WorldMap({
           onResize();
           // console.log("max: " + maxTemp + "min: " + minTemp);
         }
-      });
+      })
+      .catch((err) => console.log("Error fetching CSV:", err));
   }, [minTemp, maxTemp, tickbox, tickIndex]);
 
   const [renderCount, setRenderCount] = useState(0);
