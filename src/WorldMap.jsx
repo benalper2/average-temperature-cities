@@ -48,7 +48,7 @@ export default function WorldMap({
 
         if (responseText !== undefined) {
           textLines = responseText.split(/\r\n|\n|\r/);
-          //console.log("text.split");
+          console.log("text.split");
         }
         if (textLines !== undefined) {
           for (var i = 0; i < textLines.length; i++) {
@@ -56,6 +56,8 @@ export default function WorldMap({
           }
           CityTemps.pop(); //Remove last element
           CityTemps.shift(); //Remove first element
+
+          console.log("CityTemps[1]: " + CityTemps[1]);
 
           //Filter min and max
           FilteredTemps = CityTemps.filter((row) => {
